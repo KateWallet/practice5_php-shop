@@ -30,7 +30,7 @@ class CategoryController extends Controller
 
     public function actionSearch()
     {
-        $search = Yii::$app->request->get('search');
+        $search = \yii\helpers\Html::encode(Yii::$app->request->get('search')); //с Защитой от XSS
         $goods = new Good();
         $goods = $goods->getSearchResults($search);
         return $this->render('search', compact('goods', 'search'));

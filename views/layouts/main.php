@@ -36,7 +36,7 @@ AppAsset::register($this);
                 <a href="#">Вход в админку</a>
                 <a href="#">Корзина</a>
                 <form action="<?= Url::to(['category/search']) ?>" method="get">
-                    <?= \yii\helpers\HtmlPurifier::process($search) ?><input type="text" style="padding: 5px" placeholder="Поиск..." name="search">
+                    <input type="text" style="padding: 5px" placeholder="Поиск..." name="search">
                 </form>
             </div>
         </div>
