@@ -51,8 +51,9 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'category/<id>' => 'category/view',
-                //'like', 'name' => 'category/search', // нелогично, но работает
+                'good/<name>' => 'good/index',
                 'search' => 'category/search', // логично и работает
+                //'like', 'name' => 'category/search', // нелогично, но работает
             ],
         ],
 

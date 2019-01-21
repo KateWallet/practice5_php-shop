@@ -8,7 +8,6 @@
 
 namespace app\models;
 
-
 use yii\db\ActiveRecord;
 
 class Category extends ActiveRecord
@@ -22,6 +21,11 @@ class Category extends ActiveRecord
     public function getCategories()
     {
         return Category::find()->asArray()->all();
+    }
+
+    public function getCategoryName($id)
+    {
+        return Category::find()->where(['cat_name' => $id])->one();
     }
 
 }

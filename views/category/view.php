@@ -1,5 +1,18 @@
 <?= \app\widgets\MenuWidget::widget() ?>
+<?
+use yii\helpers\Url;
+use yii\helpers\Html;
+?>
+<!DOCTYPE html>
+<html lang="<?= Yii::$app->language ?>">
+<head>
+    <meta charset="<?= Yii::$app->charset ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title><?= Html::encode($this->title = $category['cat_name']) ?></title>
+</head>
+<body>
 <div class="container">
     <div class="row justify-content-center">
 
@@ -13,11 +26,13 @@
                     <div class="product-descr">Состав: <?= $good['composition'] ?></div>
                     <div class="product-price">Цена: <?= $good['price'] ?> рублей</div>
                     <div class="product-buttons">
-                        <button type="button" class="product-button__add btn btn-success">Заказать</button>
-                        <button type="button" class="product-button__more btn btn-primary">Подробнее</button>
+                        <a href="#" data-name="<?=$good['link_name']?>" class="product-button__add btn btn-success">Заказать</a>
+                        <a href="<?= Url::to(['good/index', 'name' => $good['link_name']]) ?>" type="button" class="product-button__more btn btn-primary">Подробнее</a>
                     </div>
                 </div>
             </div>
         <? } ?>
     </div>
 </div>
+</body>
+</html>
